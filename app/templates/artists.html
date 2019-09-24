@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+       <h2>{{ title }}</h2>
+        {% for post in posts %}
+
+            <div><p><a href = "/artistsInfo">{{ post.artist.artist }}</a></p></div>
+        {% endfor %}
+
+{% endblock %}
+
+

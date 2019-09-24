@@ -1,0 +1,28 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} New York Musicians </title>
+        {% else %}
+            <title>New York Musicians</title>
+            </head>
+        {% endif %}
+    <body>
+         <div><a href = "/music">New York Musicians: </a>
+             <a href="/artists">Artist </a>
+             <a href = "/newArtist"> Create New Artist </a>
+
+        </div><hr>
+         {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+
+</html>
+

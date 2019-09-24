@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{%  block content %}
+<h1>CREATE NEW ARTIST</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    {{ form.name }}
+
+        <p>
+            {{ form.artistName.label }}<br>
+            {{ form.artistName(size=32) }}
+             {% for error in form.artistName.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.HomeTown.label }}<br>
+            {{ form.HomeTown(size=32) }}
+             {% for error in form.HomeTown.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(size=100000) }}
+             {% for error in form.description.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
