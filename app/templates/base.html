@@ -7,9 +7,9 @@
             </head>
         {% endif %}
     <body>
-         <div><a href = "/music">New York Musicians: </a>
-             <a href="/artists">Artist </a>
-             <a href = "/newArtist"> Create New Artist </a>
+         <div><a href={{ url_for('index') }}>New York Musicians: </a>
+             <a href={{ url_for('artists') }}>Artists </a>
+             <a href={{ url_for('new_artist') }}> Create New Artist </a>
 
         </div><hr>
          {% with messages = get_flashed_messages() %}

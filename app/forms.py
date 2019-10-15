@@ -8,3 +8,5 @@ class ArtistForm(FlaskForm):
     HomeTown = StringField('Hometown', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
     submit = SubmitField('CREATE NEW ARTIST')
+
+
