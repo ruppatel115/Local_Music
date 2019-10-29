@@ -3,4 +3,9 @@
         <h1>{{ artist.name }}</h1>
         <h2> Hometown: {{ artist.hometown }}</h2>
         <h3>Description: {{ artist.description }}</h3>
+         <ul>
+        {% for event in events %}
+        <li><b>{{ event.event.event_name }}</b> at the {{ event.event.venue.venue_name }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

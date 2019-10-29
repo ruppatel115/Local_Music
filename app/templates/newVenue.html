@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{%  block content %}
+<h1>Create New Venue</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    {{ form.name }}
+
+        <p>
+            {{ form.venue_name.label }}<br>
+            {{ form.venue_name(size=32) }}
+             {% for error in form.venue_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.location.label }}<br>
+            {{ form.location(size=32) }}
+             {% for error in form.location.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
