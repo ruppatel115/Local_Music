@@ -63,6 +63,8 @@ def music():
 def artist(name):
     my_artist = Artist.query.filter_by(name=name).first()
     # events = my_artist.artistEvent
+    if my_artist is None:
+        return render_template('404.html')
     return render_template('artist.html', name=name, artist=my_artist, events=my_artist.events)
 
 
